@@ -1,20 +1,11 @@
 package com.example.xmljmsSender;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Greeting {
 
     private long id;
     private String content;
-    private static List<String> listContent = new ArrayList<>();
 
-    public List<String> getListContent() {
-        return listContent;
-    }
-
-    public void setListContent(List<String> listContent) {
-        this.listContent = listContent;
+    public Greeting() {
     }
 
     public long getId() {
