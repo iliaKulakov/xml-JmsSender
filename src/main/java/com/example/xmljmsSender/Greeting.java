@@ -7,7 +7,7 @@ public class Greeting {
 
     private long id;
     private String content;
-    private List<String> listContent = new ArrayList<>();
+    private static List<String> listContent = new ArrayList<>();
 
     public List<String> getListContent() {
         return listContent;

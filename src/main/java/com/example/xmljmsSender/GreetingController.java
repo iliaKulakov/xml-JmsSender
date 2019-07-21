@@ -1,5 +1,7 @@
 package com.example.xmljmsSender;
 
+import com.example.xmljmsSender.jms.Message;
+import com.example.xmljmsSender.jms.Sender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -25,14 +27,23 @@ public class GreetingController {
     public String greetingSubmit(@ModelAttribute Greeting greeting, Model model) {
         model.addAttribute("greeting", greeting);
 
-        Greeting greeting1 = new Greeting();
-        greeting1.getListContent().add(greeting.getContent());
+        Message.setMessage(greeting.getContent());
 
-        for(String lines: greeting1.getListContent()){
-            System.out.println("My messages in list: " + lines);
-        }
 
-        return AppConfig"result";
+//        Greeting greeting1 = new Greeting();
+//        greeting1.getListContent().add(greeting.getContent());
+//
+//
+//
+//        Sender sender = new Sender();
+//
+//        for(String lines: greeting1.getListContent()){
+//            System.out.println("My messages in list: " + lines);
+//            sender.send(lines);
+//        }
+
+
+        return "result";
     }
 
 }
