@@ -15,11 +15,12 @@ public class Sender {
     @Autowired
     private Queue queue;
 
-
     public void send(String message) {
+
         jmsTemplate.convertAndSend(queue, message);
 
-        System.out.println("Sent message succesfully from Sender: ");
+        System.out.println(" message has been sent successfully: " + message);
+
     }
 
 

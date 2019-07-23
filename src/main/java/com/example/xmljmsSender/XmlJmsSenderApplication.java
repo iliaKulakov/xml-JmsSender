@@ -33,13 +33,6 @@ public class XmlJmsSenderApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) {
 
-		List<String> messages = messageToQueue.getMessage();
-
-		System.out.println(messages.size());
-
-		for(String line:messages){
-			sender.send(line);
-		}
 	}
 
 
