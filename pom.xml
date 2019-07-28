@@ -14,6 +14,8 @@
 	<name>xml-jmsSender</name>
 	<description>Demo project for Spring Boot</description>
 
+	<packaging>war</packaging>
+
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -94,15 +96,30 @@
 <!--			<version>2.1.6.RELEASE</version>-->
 <!--		</dependency>-->
 
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+		<finalName>${artifactId}</finalName>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+</build>
+
+
 
 </project>
