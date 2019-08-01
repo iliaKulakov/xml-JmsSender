@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    #убирает spring-логи из root-логов
+    log4j.additivity.org.springframework=false
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Logger name= "ru.javastudy.examples.User" level="debug" additivity="true">
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <!-- Root Logger -->
+        <Root level="all">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+
+    <appender name="FILE" class="org.apache.log4j.RollingFileAppender">
+    <param name="File" value="C:/Users/angro/Desktop/projects/xml-jmsSender_30_09/target"/>
+    <param name="MaxBackupIndex" value="100" />
+    <layout class="org.apache.log4j.PatternLayout">
+        <param name="ConversionPattern" value="[%d{dd/MM/yy hh:mm:ss:sss z}] %5p %c{2}: %m%n" />
+    </layout>
+    </appender>
+
+</Configuration>
