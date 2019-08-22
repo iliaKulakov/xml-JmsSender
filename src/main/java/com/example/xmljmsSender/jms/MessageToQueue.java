@@ -8,13 +8,13 @@ import java.util.List;
 @Service
 public class MessageToQueue {
 
-    private static  List<String> message = new ArrayList();
+    private static List<String> message = new ArrayList();
 
     public List<String> getMessage() {
         return message;
     }
 
     public void setMessage(String message) {
-        this.message.add(message);
+        MessageToQueue.message.add(message);
     }
 }

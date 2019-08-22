@@ -5,7 +5,6 @@ import org.springframework.jms.UncategorizedJmsException;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 
-import javax.jms.JMSException;
 import javax.jms.Queue;
 
 @Service
@@ -19,13 +18,12 @@ public class Sender implements SendJms {
 
     public void sendStringMsg(String message) {
 
-        try{
+        try {
             jmsTemplate.convertAndSend(queue, message);
             System.out.println(" message has been sent successfully: " + message);
-        } catch (UncategorizedJmsException e){
+        } catch (UncategorizedJmsException e) {
             throw new RuntimeException(e);
         }
-
 
 
     }
